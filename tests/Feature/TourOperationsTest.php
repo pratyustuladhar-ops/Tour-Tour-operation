@@ -19,11 +19,11 @@ class TourOperationsTest extends TestCase
         $response->assertSee('Iconic Destinations');
     }
 
-    public function test_planner_requires_authentication_and_redirects_guests_to_register(): void
+    public function test_planner_requires_authentication_and_redirects_guests_to_login(): void
     {
         $response = $this->get('/planner');
 
-        $response->assertRedirect('/auth/register');
+        $response->assertRedirect('/auth/login');
     }
 
     public function test_bookings_page_loads_with_booking_form(): void
@@ -73,6 +73,19 @@ class TourOperationsTest extends TestCase
 
         $response->assertStatus(200);
         $this->assertStringContainsString('customer service', strtolower($response->json('reply')));
+    }
+
+    public function test_registration_rejects_passwords_without_uppercase_number_and_symbol(): void
+    {
+        $response = $this->post('/auth/register', [
+            'name' => 'Test User',
+            'email' => 'test@example.com',
+            'password' => 'weakpassword',
+            'password_confirmation' => 'weakpassword',
+            'terms' => 'on',
+        ]);
+
+        $response->assertSessionHasErrors('password');
     }
 
     public function test_booking_submission_stores_a_booking_record(): void

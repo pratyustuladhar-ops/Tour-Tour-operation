@@ -98,7 +98,7 @@
             </div>
             <h1 class="text-4xl xl:text-5xl font-black text-white leading-tight font-display mb-6">
                 Your Himalayan<br>
-                <span class="text-transparent bg-clip-text" style="background: linear-gradient(90deg, #94ccff, #b1f0ce);">adventure awaits.</span>
+                <span class="text-[#b1f0ce]">adventure awaits.</span>
             </h1>
             <p class="text-white/70 text-lg leading-relaxed max-w-md">
                 Plan AI-optimized trekking routes, manage bookings, and explore 30+ breathtaking Nepal destinations.

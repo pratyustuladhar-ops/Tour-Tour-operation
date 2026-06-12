@@ -89,7 +89,7 @@
             </div>
             <h1 class="text-4xl xl:text-5xl font-black text-white leading-tight font-display mb-6">
                 Begin your<br>
-                <span class="text-transparent bg-clip-text" style="background: linear-gradient(90deg, #b1f0ce, #94ccff);">Nepal story.</span>
+                <span class="text-[#b1f0ce]">Nepal story.</span>
             </h1>
             <p class="text-white/70 text-lg leading-relaxed max-w-md">
                 Create your free account and unlock AI-generated trekking routes, real-time weather insights, and seamless bookings.
@@ -184,7 +184,7 @@
                         <input id="password" name="password" type="password" required autocomplete="new-password"
                                oninput="checkStrength(this.value)"
                                class="input-field @error('password') border-red-400 @enderror"
-                               placeholder="Min. 8 characters">
+                               placeholder="Min. 8 chars, 1 upper, 1 number, 1 symbol">
                         <button type="button" onclick="togglePassword('password','eye1')" class="absolute right-4 top-1/2 -translate-y-1/2 text-muted">
                             <span id="eye1" class="material-symbols-outlined text-lg">visibility</span>
                         </button>
@@ -195,7 +195,7 @@
                         <div id="s3" class="strength-bar flex-1 bg-slate-200"></div>
                         <div id="s4" class="strength-bar flex-1 bg-slate-200"></div>
                     </div>
-                    <p id="strength-label" class="text-xs text-muted mt-1">Enter password to see strength</p>
+                    <p id="strength-label" class="text-xs text-muted mt-1">Use at least 8 characters, including an uppercase letter, a number, and a symbol.</p>
                     @error('password') <p class="mt-1 text-xs text-red-500">{{ $message }}</p> @enderror
                 </div>
 

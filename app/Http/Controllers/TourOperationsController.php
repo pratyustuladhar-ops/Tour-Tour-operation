@@ -27,7 +27,7 @@ class TourOperationsController extends Controller
     public function planner()
     {
         if (!auth()->check()) {
-            return redirect()->route('register');
+            return redirect()->route('login');
         }
 
         return view('tour-operations.planner');
